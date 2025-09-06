@@ -1,10 +1,21 @@
 // routes/authRoutes.js
 const express = require('express');
-const { register, login } = require('../controllers/authController');
-
 const router = express.Router();
 
-router.post('/register', register);
-router.post('/login', login);
+// Example auth routes
+
+// Signup
+router.post('/signup', (req, res) => {
+  const { username, password } = req.body;
+  // Add database logic here
+  res.json({ message: `User ${username} registered!` });
+});
+
+// Login
+router.post('/login', (req, res) => {
+  const { username, password } = req.body;
+  // Add database logic here
+  res.json({ message: `User ${username} logged in!` });
+});
 
 module.exports = router;
